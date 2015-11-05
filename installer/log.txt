@@ -1,6 +1,6 @@
 Client Info
 
-User Agent : Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
+User Agent : Mozilla/5.0 (Windows NT 6.1; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0
 Remote Address : ::1
 
 Server Info
@@ -15,34 +15,34 @@ ROOT_PATH : D:\xampp\htdocs\orangehrm
 
 OrangeHRM Installation Log
 
-Wed, 04 Nov 2015 09:19:06 +0100 DB Creation - Starting
-Wed, 04 Nov 2015 09:19:06 +0100 DB Creation - Done
-Wed, 04 Nov 2015 09:19:06 +0100 DB Creation - No Errors
-Wed, 04 Nov 2015 09:19:08 +0100 Fill Data Phase 1 - Starting
-Wed, 04 Nov 2015 09:19:08 +0100 Fill Data Phase 1 - Connected to the DB Server
-Wed, 04 Nov 2015 09:19:08 +0100 Fill Data Phase 1 - Selected the DB
-Wed, 04 Nov 2015 09:19:08 +0100 Fill Data Phase 1 - Reading DB Script
-Wed, 04 Nov 2015 09:19:08 +0100 Fill Data Phase 1 - Opened DB Script
-Wed, 04 Nov 2015 09:19:08 +0100 Fill Data Phase 1 - Read DB script
-Wed, 04 Nov 2015 09:19:08 +0100 Fill Data Phase 1 - There are 284 Statements in the DB script
-Wed, 04 Nov 2015 09:27:11 +0100 Fill Data Phase 1 - Done
-Wed, 04 Nov 2015 09:27:11 +0100 Fill Data Phase 1 - No Errors
-Wed, 04 Nov 2015 09:27:14 +0100 Fill Data Phase 2 - Starting
-Wed, 04 Nov 2015 09:27:14 +0100 Fill Data Phase 2 - Connected to the DB Server
-Wed, 04 Nov 2015 09:27:14 +0100 Fill Data Phase 2 - Selected the DB
-Wed, 04 Nov 2015 09:27:14 +0100 Fill Data Phase 2 - Reading DB Script
-Wed, 04 Nov 2015 09:27:14 +0100 Fill Data Phase 2 - Opened DB Script
-Wed, 04 Nov 2015 09:27:14 +0100 Fill Data Phase 2 - Read DB script
-Wed, 04 Nov 2015 09:27:14 +0100 Fill Data Phase 2 - There are 127 Statements in the DB script
-Wed, 04 Nov 2015 09:27:28 +0100 Fill Data Phase 1 - Connected to the DB Server
-Wed, 04 Nov 2015 09:27:28 +0100 Fill Data Phase 2 - Done
-Wed, 04 Nov 2015 09:27:29 +0100 Fill Data Phase 2 - No Errors
-Wed, 04 Nov 2015 09:27:32 +0100 Create DB user - Starting
-Wed, 04 Nov 2015 09:27:32 +0100 Create DB user - Done
-Wed, 04 Nov 2015 09:27:32 +0100 Create DB user - No Errors
-Wed, 04 Nov 2015 09:27:35 +0100 Create OrangeHRM user - Starting
-Wed, 04 Nov 2015 09:27:35 +0100 Create OrangeHRM user - Done
-Wed, 04 Nov 2015 09:27:35 +0100 Create OrangeHRM user - No Errors
-Wed, 04 Nov 2015 09:27:38 +0100 Write Conf - Starting
-Wed, 04 Nov 2015 09:27:38 +0100 Write Conf - Done
-Wed, 04 Nov 2015 09:27:38 +0100 Write Conf - No Errors
+Thu, 05 Nov 2015 11:47:53 +0100 DB Creation - Starting
+Thu, 05 Nov 2015 11:47:53 +0100 DB Creation - Done
+Thu, 05 Nov 2015 11:47:53 +0100 DB Creation - No Errors
+Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Starting
+Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Connected to the DB Server
+Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Selected the DB
+Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Reading DB Script
+Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Opened DB Script
+Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Read DB script
+Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - There are 284 Statements in the DB script
+Thu, 05 Nov 2015 11:51:55 +0100 Fill Data Phase 1 - Done
+Thu, 05 Nov 2015 11:51:55 +0100 Fill Data Phase 1 - No Errors
+Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Starting
+Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Connected to the DB Server
+Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Selected the DB
+Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Reading DB Script
+Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Opened DB Script
+Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Read DB script
+Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - There are 127 Statements in the DB script
+Thu, 05 Nov 2015 11:52:11 +0100 Fill Data Phase 1 - Connected to the DB Server
+Thu, 05 Nov 2015 11:52:11 +0100 Fill Data Phase 2 - Done
+Thu, 05 Nov 2015 11:52:11 +0100 Fill Data Phase 2 - No Errors
+Thu, 05 Nov 2015 11:52:13 +0100 Create DB user - Starting
+Thu, 05 Nov 2015 11:52:13 +0100 Create DB user - Done
+Thu, 05 Nov 2015 11:52:13 +0100 Create DB user - No Errors
+Thu, 05 Nov 2015 11:52:15 +0100 Create OrangeHRM user - Starting
+Thu, 05 Nov 2015 11:52:16 +0100 Create OrangeHRM user - Done
+Thu, 05 Nov 2015 11:52:16 +0100 Create OrangeHRM user - No Errors
+Thu, 05 Nov 2015 11:52:18 +0100 Write Conf - Starting
+Thu, 05 Nov 2015 11:52:18 +0100 Write Conf - Done
+Thu, 05 Nov 2015 11:52:18 +0100 Write Conf - No Errors

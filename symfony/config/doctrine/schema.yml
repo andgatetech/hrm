@@ -73,7 +73,30 @@ Country:
       local: cou_code
       foreign: country
       type: many
-      
+Thana:
+  connection: doctrine
+  tableName: hs_hr_thana
+  columns:
+    thana_code:
+      type: string(13)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: false
+    thana_name:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    district_code:
+      type: string(13)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false     
 UniqueId:
   tableName: hs_hr_unique_id
   columns:

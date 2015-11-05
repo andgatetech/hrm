@@ -64,6 +64,12 @@
                             <?php echo $form['emp_zipcode']->renderLabel(__("Zip/Postal Code")); ?>
                             <?php echo $form['emp_zipcode']->render(array("class" => "formInputText", "maxlength" => 10)); ?>
                         </li>
+                        <!-- Thana -->
+                        <li>
+                            <?php echo $form['thana']->renderLabel(__("Thana")); ?>
+                            <?php echo $form['thana']->render(array("class" => "formInputText")); ?>
+                        </li>
+                        
                         <li>
                             <?php echo $form['country']->renderLabel(__("Country")); ?>
                             <?php echo $form['country']->render(array("class" => "formInputText")); ?>

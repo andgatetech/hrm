@@ -20,6 +20,7 @@
 class EmployeeContactDetailsForm extends sfForm {
 
     private $countryService;
+    private $thanaService;
     private $employeeService;
     public $fullName;
     public $empNumber;
@@ -86,11 +87,13 @@ class EmployeeContactDetailsForm extends sfForm {
 
     public function getContactDetailsWidgets() {
         $countries = $this->getCountryList();
+        $thanas = $this->getThanaList();
         $states = $this->getStatesList();
         $widgets = array();
         
         //creating widgets
         $widgets['country'] = new sfWidgetFormSelect(array('choices' => $countries));
+        $widgets['thana'] = new sfWidgetFormSelect(array('choices' => $thanas));
         $widgets['state'] = new sfWidgetFormSelect(array('choices' => $states));
         $widgets['street1'] = new sfWidgetFormInput();
         $widgets['street2'] = new sfWidgetFormInput();
@@ -123,6 +126,7 @@ class EmployeeContactDetailsForm extends sfForm {
     public function getContactDetailsValidators() {
         $validators = array(
             'country' => new sfValidatorString(array('required' => false)),
+        	'thana' => new sfValidatorString(array('required' => false)),
             'state' => new sfValidatorString(array('required' => false)),
             'street1' => new sfValidatorString(array('required' => false)),
             'street2' => new sfValidatorString(array('required' => false)),
@@ -207,7 +211,7 @@ class EmployeeContactDetailsForm extends sfForm {
      * @returns CountryService
      */
     public function getCountryService() {
-        if (is_null($this->countryService)) {
+        if (is_null($this->countryService)) {       	
             $this->countryService = new CountryService();
         }
         return $this->countryService;
@@ -224,6 +228,33 @@ class EmployeeContactDetailsForm extends sfForm {
             $list[$country->cou_code] = $country->cou_name;
         }
         return $list;
+    }
+    
+    /**
+     * Returns Thana Service
+     * @returns ThanaService
+     */
+    public function getThanaService() {
+    	
+    	if (is_null($this->thanaService)) {
+    		echo "DEBUG: 1";
+    		$this->thanaService = new ThanaService();
+    		echo "DEBUG: 2";
+    	}
+    	return $this->thanaService;
+    }
+    
+    /**
+     * Returns Thana List
+     * @return array
+     */
+    private function getThanaList() {
+    	$list = array(0 => "-- " . __('Select') . " --");
+    	$thanas = $this->getThanaService()->getThanaList();
+    	foreach ($thanas as $thana) {
+    		$list[$thana->thana_code] = $thana->thana_name;
+    	}
+    	return $list;
     }
 
     /**
