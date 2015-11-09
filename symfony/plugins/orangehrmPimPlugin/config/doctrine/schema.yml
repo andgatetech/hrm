@@ -60,6 +60,10 @@ Employee:
       name: city_code as city
       type: string(100)
       default: ''
+    thana_code:
+      name: thana_code as thana
+      type: string(100)
+      default: ''
     coun_code:
       name: coun_code as country
       type: string(100)

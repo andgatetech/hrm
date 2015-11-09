@@ -19,6 +19,7 @@
  * @property string $street1
  * @property string $street2
  * @property string $city
+ * @property string $thana
  * @property string $country
  * @property string $province
  * @property string $employeeId
@@ -111,6 +112,7 @@
  * @method string                    getStreet1()                    Returns the current record's "street1" value
  * @method string                    getStreet2()                    Returns the current record's "street2" value
  * @method string                    getCity()                       Returns the current record's "city" value
+ * @method string                    getThana()                      Returns the current record's "thana" value
  * @method string                    getCountry()                    Returns the current record's "country" value
  * @method string                    getProvince()                   Returns the current record's "province" value
  * @method string                    getEmployeeId()                 Returns the current record's "employeeId" value
@@ -202,6 +204,7 @@
  * @method Employee                  setStreet1()                    Sets the current record's "street1" value
  * @method Employee                  setStreet2()                    Sets the current record's "street2" value
  * @method Employee                  setCity()                       Sets the current record's "city" value
+ * @method Employee                  setThana()                      Sets the current record's "thana" value
  * @method Employee                  setCountry()                    Sets the current record's "country" value
  * @method Employee                  setProvince()                   Sets the current record's "province" value
  * @method Employee                  setEmployeeId()                 Sets the current record's "employeeId" value
@@ -359,6 +362,11 @@ abstract class BaseEmployee extends sfDoctrineRecord
              'length' => 100,
              ));
         $this->hasColumn('city_code as city', 'string', 100, array(
+             'type' => 'string',
+             'default' => '',
+             'length' => 100,
+             ));
+        $this->hasColumn('thana_code as thana', 'string', 100, array(
              'type' => 'string',
              'default' => '',
              'length' => 100,

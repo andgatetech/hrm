@@ -89,10 +89,7 @@ use_stylesheet(plugin_web_path('orangehrmPimPlugin', 'css/viewPersonalDetailsSuc
                             <label for="personal_cmbMarital"><?php echo __('Marital Status'); ?></label>
                             <?php echo $form['cmbMarital']->render(array("class"=>"editable")); ?>
                         </li>
-                        <li class="new">
-                            <label for="personal_cmbNation"><?php echo __("Nationality"); ?></label>
-                            <?php echo $form['cmbNation']->render(array("class"=>"editable")); ?>
-                        </li>
+                        
                         <li>
                             <label for="personal_DOB"><?php echo __("Date of Birth"); ?></label>
                             <?php echo $form['DOB']->render(array("class"=>"editable")); ?>
@@ -102,7 +99,15 @@ use_stylesheet(plugin_web_path('orangehrmPimPlugin', 'css/viewPersonalDetailsSuc
                             <em>*</em> <?php echo __(CommonMessages::REQUIRED_FIELD); ?>
                         </li>
                         <?php endif; ?>
-                    </ol>    
+                    </ol>
+                    
+                    <ol>
+                    	 <li class="new">
+                            <label for="personal_cmbNation"><?php echo __("Nationality"); ?></label>
+                            <?php echo $form['cmbNation']->render(array("class"=>"editable")); ?>
+                        </li>
+                    </ol>
+                        
                     <?php if($showDeprecatedFields) : ?>    
                     <ol>
                         <li>

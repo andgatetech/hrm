@@ -108,6 +108,7 @@ class EmployeeContactDetailsForm extends sfForm {
 
         //setting the default values
         $widgets['country']->setDefault($this->employee->country);
+        $widgets['thana']->setDefault($this->employee->thana);
         $widgets['state']->setDefault($this->employee->province);
         $widgets['street1']->setDefault($this->employee->street1);
         $widgets['street2']->setDefault($this->employee->street2);
@@ -188,6 +189,7 @@ class EmployeeContactDetailsForm extends sfForm {
         $employee->street2 = $this->getValue('street2');
         $employee->city = $this->getValue('city');
         $employee->country = $this->getValue('country');
+        $employee->thana = $this->getValue('thana');
 
         $province = $this->getValue('province');
         if ($employee->country == "US") {

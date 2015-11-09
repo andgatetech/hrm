@@ -15,34 +15,34 @@ ROOT_PATH : D:\xampp\htdocs\orangehrm
 
 OrangeHRM Installation Log
 
-Thu, 05 Nov 2015 11:47:53 +0100 DB Creation - Starting
-Thu, 05 Nov 2015 11:47:53 +0100 DB Creation - Done
-Thu, 05 Nov 2015 11:47:53 +0100 DB Creation - No Errors
-Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Starting
-Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Connected to the DB Server
-Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Selected the DB
-Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Reading DB Script
-Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Opened DB Script
-Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - Read DB script
-Thu, 05 Nov 2015 11:47:55 +0100 Fill Data Phase 1 - There are 284 Statements in the DB script
-Thu, 05 Nov 2015 11:51:55 +0100 Fill Data Phase 1 - Done
-Thu, 05 Nov 2015 11:51:55 +0100 Fill Data Phase 1 - No Errors
-Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Starting
-Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Connected to the DB Server
-Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Selected the DB
-Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Reading DB Script
-Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Opened DB Script
-Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - Read DB script
-Thu, 05 Nov 2015 11:51:57 +0100 Fill Data Phase 2 - There are 127 Statements in the DB script
-Thu, 05 Nov 2015 11:52:11 +0100 Fill Data Phase 1 - Connected to the DB Server
-Thu, 05 Nov 2015 11:52:11 +0100 Fill Data Phase 2 - Done
-Thu, 05 Nov 2015 11:52:11 +0100 Fill Data Phase 2 - No Errors
-Thu, 05 Nov 2015 11:52:13 +0100 Create DB user - Starting
-Thu, 05 Nov 2015 11:52:13 +0100 Create DB user - Done
-Thu, 05 Nov 2015 11:52:13 +0100 Create DB user - No Errors
-Thu, 05 Nov 2015 11:52:15 +0100 Create OrangeHRM user - Starting
-Thu, 05 Nov 2015 11:52:16 +0100 Create OrangeHRM user - Done
-Thu, 05 Nov 2015 11:52:16 +0100 Create OrangeHRM user - No Errors
-Thu, 05 Nov 2015 11:52:18 +0100 Write Conf - Starting
-Thu, 05 Nov 2015 11:52:18 +0100 Write Conf - Done
-Thu, 05 Nov 2015 11:52:18 +0100 Write Conf - No Errors
+Mon, 09 Nov 2015 12:36:50 +0100 DB Creation - Starting
+Mon, 09 Nov 2015 12:36:50 +0100 DB Creation - Done
+Mon, 09 Nov 2015 12:36:50 +0100 DB Creation - No Errors
+Mon, 09 Nov 2015 12:36:52 +0100 Fill Data Phase 1 - Starting
+Mon, 09 Nov 2015 12:36:52 +0100 Fill Data Phase 1 - Connected to the DB Server
+Mon, 09 Nov 2015 12:36:52 +0100 Fill Data Phase 1 - Selected the DB
+Mon, 09 Nov 2015 12:36:52 +0100 Fill Data Phase 1 - Reading DB Script
+Mon, 09 Nov 2015 12:36:52 +0100 Fill Data Phase 1 - Opened DB Script
+Mon, 09 Nov 2015 12:36:52 +0100 Fill Data Phase 1 - Read DB script
+Mon, 09 Nov 2015 12:36:52 +0100 Fill Data Phase 1 - There are 284 Statements in the DB script
+Mon, 09 Nov 2015 12:41:41 +0100 Fill Data Phase 1 - Done
+Mon, 09 Nov 2015 12:41:41 +0100 Fill Data Phase 1 - No Errors
+Mon, 09 Nov 2015 12:41:43 +0100 Fill Data Phase 2 - Starting
+Mon, 09 Nov 2015 12:41:43 +0100 Fill Data Phase 2 - Connected to the DB Server
+Mon, 09 Nov 2015 12:41:43 +0100 Fill Data Phase 2 - Selected the DB
+Mon, 09 Nov 2015 12:41:43 +0100 Fill Data Phase 2 - Reading DB Script
+Mon, 09 Nov 2015 12:41:43 +0100 Fill Data Phase 2 - Opened DB Script
+Mon, 09 Nov 2015 12:41:43 +0100 Fill Data Phase 2 - Read DB script
+Mon, 09 Nov 2015 12:41:43 +0100 Fill Data Phase 2 - There are 127 Statements in the DB script
+Mon, 09 Nov 2015 12:41:58 +0100 Fill Data Phase 1 - Connected to the DB Server
+Mon, 09 Nov 2015 12:41:58 +0100 Fill Data Phase 2 - Done
+Mon, 09 Nov 2015 12:41:59 +0100 Fill Data Phase 2 - No Errors
+Mon, 09 Nov 2015 12:42:01 +0100 Create DB user - Starting
+Mon, 09 Nov 2015 12:42:01 +0100 Create DB user - Done
+Mon, 09 Nov 2015 12:42:01 +0100 Create DB user - No Errors
+Mon, 09 Nov 2015 12:42:03 +0100 Create OrangeHRM user - Starting
+Mon, 09 Nov 2015 12:42:04 +0100 Create OrangeHRM user - Done
+Mon, 09 Nov 2015 12:42:04 +0100 Create OrangeHRM user - No Errors
+Mon, 09 Nov 2015 12:42:06 +0100 Write Conf - Starting
+Mon, 09 Nov 2015 12:42:06 +0100 Write Conf - Done
+Mon, 09 Nov 2015 12:42:06 +0100 Write Conf - No Errors
