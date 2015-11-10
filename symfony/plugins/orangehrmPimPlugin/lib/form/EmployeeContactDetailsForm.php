@@ -239,9 +239,7 @@ class EmployeeContactDetailsForm extends sfForm {
     public function getThanaService() {
     	
     	if (is_null($this->thanaService)) {
-    		echo "DEBUG: 1";
     		$this->thanaService = new ThanaService();
-    		echo "DEBUG: 2";
     	}
     	return $this->thanaService;
     }

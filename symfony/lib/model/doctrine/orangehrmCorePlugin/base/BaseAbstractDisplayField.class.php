@@ -1,6 +1,4 @@
 <?php
-// Connection Component Binding
-Doctrine_Manager::getInstance()->bindComponent('AbstractDisplayField', 'doctrine');
 
 /**
  * BaseAbstractDisplayField
@@ -19,12 +17,11 @@ Doctrine_Manager::getInstance()->bindComponent('AbstractDisplayField', 'doctrine
  * @property string $width
  * @property string $isExportable
  * @property string $textAlignmentStyle
- * @property integer $isValueList
+ * @property boolean $isValueList
  * @property integer $display_field_group_id
  * @property string $defaultValue
- * @property integer $isEncrypted
- * @property integer $is_meta
- * @property integer $id
+ * @property boolean $isEncrypted
+ * @property boolean $is_meta
  * @property ReportGroup $ReportGroup
  * @property DisplayFieldGroup $DisplayFieldGroup
  * 
@@ -40,12 +37,11 @@ Doctrine_Manager::getInstance()->bindComponent('AbstractDisplayField', 'doctrine
  * @method string               getWidth()                  Returns the current record's "width" value
  * @method string               getIsExportable()           Returns the current record's "isExportable" value
  * @method string               getTextAlignmentStyle()     Returns the current record's "textAlignmentStyle" value
- * @method integer              getIsValueList()            Returns the current record's "isValueList" value
+ * @method boolean              getIsValueList()            Returns the current record's "isValueList" value
  * @method integer              getDisplayFieldGroupId()    Returns the current record's "display_field_group_id" value
  * @method string               getDefaultValue()           Returns the current record's "defaultValue" value
- * @method integer              getIsEncrypted()            Returns the current record's "isEncrypted" value
- * @method integer              getIsMeta()                 Returns the current record's "is_meta" value
- * @method integer              getId()                     Returns the current record's "id" value
+ * @method boolean              getIsEncrypted()            Returns the current record's "isEncrypted" value
+ * @method boolean              getIsMeta()                 Returns the current record's "is_meta" value
  * @method ReportGroup          getReportGroup()            Returns the current record's "ReportGroup" value
  * @method DisplayFieldGroup    getDisplayFieldGroup()      Returns the current record's "DisplayFieldGroup" value
  * @method AbstractDisplayField setReportGroupId()          Sets the current record's "reportGroupId" value
@@ -65,7 +61,6 @@ Doctrine_Manager::getInstance()->bindComponent('AbstractDisplayField', 'doctrine
  * @method AbstractDisplayField setDefaultValue()           Sets the current record's "defaultValue" value
  * @method AbstractDisplayField setIsEncrypted()            Sets the current record's "isEncrypted" value
  * @method AbstractDisplayField setIsMeta()                 Sets the current record's "is_meta" value
- * @method AbstractDisplayField setId()                     Sets the current record's "id" value
  * @method AbstractDisplayField setReportGroup()            Sets the current record's "ReportGroup" value
  * @method AbstractDisplayField setDisplayFieldGroup()      Sets the current record's "DisplayFieldGroup" value
  * 
@@ -79,167 +74,87 @@ abstract class BaseAbstractDisplayField extends sfDoctrineRecord
     public function setTableDefinition()
     {
         $this->setTableName('abstract_display_field');
-        $this->hasColumn('report_group_id as reportGroupId', 'integer', 8, array(
+        $this->hasColumn('report_group_id as reportGroupId', 'integer', null, array(
              'type' => 'integer',
              'notnull' => true,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
-             'length' => 8,
              ));
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
         $this->hasColumn('label', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
         $this->hasColumn('field_alias as fieldAlias', 'string', 255, array(
              'type' => 'string',
              'notnull' => false,
              'length' => 255,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
         $this->hasColumn('is_sortable as isSortable', 'string', 10, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 10,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
         $this->hasColumn('sort_order as sortOrder', 'string', 255, array(
              'type' => 'string',
              'notnull' => false,
              'length' => 255,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
         $this->hasColumn('sort_field as sortField', 'string', 255, array(
              'type' => 'string',
              'notnull' => false,
              'length' => 255,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
         $this->hasColumn('element_type as elementType', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
-        $this->hasColumn('element_property as elementProperty', 'string', null, array(
+        $this->hasColumn('element_property as elementProperty', 'string', 1000, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => '',
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
+             'length' => 1000,
              ));
         $this->hasColumn('width', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
         $this->hasColumn('is_exportable as isExportable', 'string', 10, array(
              'type' => 'string',
              'notnull' => false,
              'length' => 10,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
         $this->hasColumn('text_alignment_style as textAlignmentStyle', 'string', 20, array(
              'type' => 'string',
              'notnull' => false,
              'length' => 20,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
-        $this->hasColumn('is_value_list as isValueList', 'integer', 1, array(
-             'type' => 'integer',
+        $this->hasColumn('is_value_list as isValueList', 'boolean', null, array(
+             'type' => 'boolean',
              'notnull' => true,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
-             'length' => 1,
              ));
-        $this->hasColumn('display_field_group_id', 'integer', 8, array(
+        $this->hasColumn('display_field_group_id', 'integer', null, array(
              'type' => 'integer',
              'unsigned' => true,
              'notnull' => false,
-             'fixed' => 0,
-             'primary' => false,
-             'autoincrement' => false,
-             'length' => 8,
              ));
         $this->hasColumn('default_value as defaultValue', 'string', 255, array(
              'type' => 'string',
              'notnull' => false,
              'length' => 255,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
              ));
-        $this->hasColumn('is_encrypted as isEncrypted', 'integer', 1, array(
-             'type' => 'integer',
+        $this->hasColumn('is_encrypted as isEncrypted', 'boolean', null, array(
+             'type' => 'boolean',
              'notnull' => true,
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
-             'length' => 1,
              ));
-        $this->hasColumn('is_meta', 'integer', 1, array(
-             'type' => 'integer',
+        $this->hasColumn('is_meta', 'boolean', null, array(
+             'type' => 'boolean',
              'notnull' => true,
-             'default' => '0',
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => false,
-             'autoincrement' => false,
-             'length' => 1,
-             ));
-        $this->hasColumn('id', 'integer', 8, array(
-             'type' => 'integer',
-             'fixed' => 0,
-             'unsigned' => false,
-             'primary' => true,
-             'autoincrement' => true,
-             'length' => 8,
+             'default' => false,
              ));
     }
 
