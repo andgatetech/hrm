@@ -20,6 +20,8 @@
 class EmployeeContactDetailsForm extends sfForm {
 
     private $countryService;
+    private $divisionService;
+    private $districtService;
     private $thanaService;
     private $employeeService;
     public $fullName;
@@ -87,12 +89,16 @@ class EmployeeContactDetailsForm extends sfForm {
 
     public function getContactDetailsWidgets() {
         $countries = $this->getCountryList();
+        $divisions = $this->getDivisionList();
+        $districts = $this->getDistrictList();
         $thanas = $this->getThanaList();
         $states = $this->getStatesList();
         $widgets = array();
         
         //creating widgets
         $widgets['country'] = new sfWidgetFormSelect(array('choices' => $countries));
+        $widgets['division'] = new sfWidgetFormSelect(array('choices' => $divisions));
+        $widgets['district'] = new sfWidgetFormSelect(array('choices' => $districts));
         $widgets['thana'] = new sfWidgetFormSelect(array('choices' => $thanas));
         $widgets['state'] = new sfWidgetFormSelect(array('choices' => $states));
         $widgets['street1'] = new sfWidgetFormInput();
@@ -108,6 +114,8 @@ class EmployeeContactDetailsForm extends sfForm {
 
         //setting the default values
         $widgets['country']->setDefault($this->employee->country);
+        $widgets['division']->setDefault($this->employee->division);
+        $widgets['district']->setDefault($this->employee->district);
         $widgets['thana']->setDefault($this->employee->thana);
         $widgets['state']->setDefault($this->employee->province);
         $widgets['street1']->setDefault($this->employee->street1);
@@ -231,6 +239,58 @@ class EmployeeContactDetailsForm extends sfForm {
         }
         return $list;
     }
+    
+    /**
+     * Returns Division Service
+     * @returns DivisionService
+     */
+    public function getDivisionService() {
+    	 
+    	if (is_null($this->divisionService)) {
+    		$this->divisionService = new DivisionService();
+    	}
+    	return $this->divisionService;
+    }
+    
+    /**
+     * Returns Division List
+     * @return array
+     */
+    private function getDivisionList() {
+    	$list = array(0 => "-- " . __('Select') . " --");
+    	$divisions = $this->getDivisionService()->getDivisionList();
+    	foreach ($divisions as $division) {
+    		$list[$division->division_code] = $division->division_name;
+    	}
+    	return $list;
+    }
+    
+    /**
+     * Returns District Service
+     * @returns DistrictService
+     */
+    public function getDistrictService() {
+    	 
+    	if (is_null($this->districtService)) {
+    		$this->districtService = new DistrictService();
+    	}
+    	return $this->districtService;
+    }
+    
+    /**
+     * Returns District List
+     * @return array
+     */
+    private function getDistrictList() {
+    	$list = array(0 => "-- " . __('Select') . " --");
+    	$districts = $this->getDistrictService()->getDistrictList();
+    	foreach ($districts as $district) {
+    		$list[$district->district_code] = $district->district_name;
+    	}
+    	return $list;
+    }
+    
+    
     
     /**
      * Returns Thana Service

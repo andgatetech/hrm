@@ -19,6 +19,8 @@
  * @property string $street1
  * @property string $street2
  * @property string $city
+ * @property string $division
+ * @property string $district
  * @property string $thana
  * @property string $country
  * @property string $province
@@ -112,6 +114,8 @@
  * @method string                    getStreet1()                    Returns the current record's "street1" value
  * @method string                    getStreet2()                    Returns the current record's "street2" value
  * @method string                    getCity()                       Returns the current record's "city" value
+ * @method string                    getDivision()                   Returns the current record's "division" value
+ * @method string                    getDistrict()                   Returns the current record's "district" value
  * @method string                    getThana()                      Returns the current record's "thana" value
  * @method string                    getCountry()                    Returns the current record's "country" value
  * @method string                    getProvince()                   Returns the current record's "province" value
@@ -204,6 +208,8 @@
  * @method Employee                  setStreet1()                    Sets the current record's "street1" value
  * @method Employee                  setStreet2()                    Sets the current record's "street2" value
  * @method Employee                  setCity()                       Sets the current record's "city" value
+ * @method Employee                  setDivision()                   Sets the current record's "division" value
+ * @method Employee                  setDistrict()                   Sets the current record's "district" value
  * @method Employee                  setThana()                      Sets the current record's "thana" value
  * @method Employee                  setCountry()                    Sets the current record's "country" value
  * @method Employee                  setProvince()                   Sets the current record's "province" value
@@ -365,6 +371,24 @@ abstract class BaseEmployee extends sfDoctrineRecord
              'type' => 'string',
              'default' => '',
              'length' => 100,
+             ));
+        $this->hasColumn('division_code as division', 'string', 50, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 50,
+             ));
+        $this->hasColumn('district_code as district', 'string', 50, array(
+             'type' => 'string',
+             'fixed' => 0,
+             'unsigned' => false,
+             'primary' => false,
+             'notnull' => true,
+             'autoincrement' => false,
+             'length' => 50,
              ));
         $this->hasColumn('thana_code as thana', 'string', 100, array(
              'type' => 'string',

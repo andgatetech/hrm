@@ -69,6 +69,17 @@
                             <?php echo $form['thana']->renderLabel(__("Thana")); ?>
                             <?php echo $form['thana']->render(array("class" => "formInputText")); ?>
                         </li>
+                         <!-- District -->
+                        <li>
+                            <?php echo $form['district']->renderLabel(__("District")); ?>
+                            <?php echo $form['district']->render(array("class" => "formInputText")); ?>
+                        </li>
+                        
+                         <!-- Division -->
+                        <li>
+                            <?php echo $form['division']->renderLabel(__("Division")); ?>
+                            <?php echo $form['division']->render(array("class" => "formInputText")); ?>
+                        </li>                        
                         
                         <li>
                             <?php echo $form['country']->renderLabel(__("Country")); ?>

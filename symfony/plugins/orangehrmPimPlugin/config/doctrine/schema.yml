@@ -60,6 +60,22 @@ Employee:
       name: city_code as city
       type: string(100)
       default: ''
+    division_code:
+      name: division_code as division
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    district_code:
+      name: district_code as district
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false  
     thana_code:
       name: thana_code as thana
       type: string(100)
