@@ -135,6 +135,8 @@ class EmployeeContactDetailsForm extends sfForm {
     public function getContactDetailsValidators() {
         $validators = array(
             'country' => new sfValidatorString(array('required' => false)),
+        	'division' => new sfValidatorString(array('required' => false)),
+        	'district' => new sfValidatorString(array('required' => false)),
         	'thana' => new sfValidatorString(array('required' => false)),
             'state' => new sfValidatorString(array('required' => false)),
             'street1' => new sfValidatorString(array('required' => false)),
@@ -197,6 +199,8 @@ class EmployeeContactDetailsForm extends sfForm {
         $employee->street2 = $this->getValue('street2');
         $employee->city = $this->getValue('city');
         $employee->country = $this->getValue('country');
+        $employee->division = $this->getValue('division');
+        $employee->district = $this->getValue('district');
         $employee->thana = $this->getValue('thana');
 
         $province = $this->getValue('province');
