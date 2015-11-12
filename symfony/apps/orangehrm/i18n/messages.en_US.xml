@@ -6980,6 +6980,14 @@
         <source>User Account Not found</source>
         <target>User Account Not found</target>
       </trans-unit>
+      <trans-unit id="1745">
+        <source>Religions</source>
+        <target>Religions</target>
+      </trans-unit>
+      <trans-unit id="1746">
+        <source>Religion</source>
+        <target>Religion</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

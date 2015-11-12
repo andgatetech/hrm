@@ -2,6 +2,10 @@ membershipSuccess:
   layout: freshorange
   javascripts:    [-*]
   stylesheets:    [-*]
+religionSuccess:
+  layout: freshorange
+  javascripts:    [-*]
+  stylesheets:    [-*]
 nationalitySuccess:
   layout: freshorange
   javascripts:    [-*]
