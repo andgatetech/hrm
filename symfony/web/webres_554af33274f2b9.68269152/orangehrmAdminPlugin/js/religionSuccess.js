@@ -23,11 +23,11 @@ $(document).ready(function() {
         validator.resetForm();
     });
 
-    $('a[href="javascript:"]').click(function(){
+    $('a[href="javascript:"]').click(function(){ 	
         var row = $(this).closest("tr");
         var statId = row.find('input').val();
-        var url = nationalityInfoUrl+statId;
-        $('#religionHeading').html(lang_editNationality);
+        var url = religionInfoUrl+statId;
+        $('#religionHeading').html(lang_editReligion);
         getReligionInfo(url);
 
     });
@@ -122,9 +122,9 @@ $(document).ready(function() {
 });
 
 function getReligionInfo(url){
-
     $.getJSON(url, function(data) {
         $('#religion_religionId').val(data.id);
+        $('#religion_code').val(data.code);
         $('#religion_name').val(data.name);
         $('#religion').show();
         $(".messageBalloon_success").remove();

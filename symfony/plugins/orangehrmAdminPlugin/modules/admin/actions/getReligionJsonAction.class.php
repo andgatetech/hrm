@@ -15,9 +15,9 @@ class getReligionJsonAction extends sfAction {
         $religionId = $request->getParameter('id');
 
         $service = new ReligionService();
-        $religion = $service->getReligionsById($religionId);
+        $religion = $service->getReligionById($religionId);
 
-        return $this->renderText(json_encode($nationality->toArray()));
+        return $this->renderText(json_encode($religion->toArray()));
     }
 
 }

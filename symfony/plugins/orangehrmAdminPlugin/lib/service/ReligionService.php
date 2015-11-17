@@ -37,7 +37,7 @@ class ReligionService extends BaseService{
         return $this->religionDao->getReligionList();
     }
 
-    public function getReligionsById($id) {
+    public function getReligionById($id) {
         return $this->religionDao->getReligionById($id);
     }
 
