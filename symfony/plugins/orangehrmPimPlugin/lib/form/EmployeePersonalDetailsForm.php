@@ -21,6 +21,7 @@
 class EmployeePersonalDetailsForm extends BaseForm {
 
     private $nationalityService;
+    private $religionService;
     private $employeeService;
     private $readOnlyWidgetNames = array();
     private $gender;
@@ -45,6 +46,26 @@ class EmployeePersonalDetailsForm extends BaseForm {
     public function setNationalityService(NationalityService $nationalityService) {
         $this->nationalityService = $nationalityService;
     }
+    
+    /**
+     * Get ReligionService
+     * @returns NationalityService
+     */
+    public function getRelilgionService() {
+    	if (is_null($this->religionService)) {
+    		$this->religionService = new ReligionService();
+    	}
+    	return $this->religionService;
+    }
+    
+    /**
+     * Set ReligionService
+     * @param RelilgionService $religionService
+     */
+    public function setReligionService(ReligionService $religionService) {
+    	$this->religionService = $religionService;
+    }
+    
 
     /**
      * Get EmployeeService
@@ -130,6 +151,16 @@ class EmployeePersonalDetailsForm extends BaseForm {
         }
         return $list;
     }
+    private function getReligionList() {
+    	$religionService = $this->getRelilgionService();
+    	$religions = $religionService->getReligionList();
+    	$list = array(0 => "-- " . __('Select') . " --");
+    
+    	foreach ($religions as $religion) {
+    		$list[$religion->getId()] = $religion->getName();
+    	}
+    	return $list;
+    }
 
     private function getPersonalInfoWidgets() {
         $widgets = array(
@@ -139,6 +170,7 @@ class EmployeePersonalDetailsForm extends BaseForm {
             'txtEmpNickName' => new sfWidgetFormInputText(),
             'optGender' => new sfWidgetFormChoice(array('expanded' => true, 'choices' => array(1 => __("Male"), 2 => __("Female")))),
             'cmbNation' => new sfWidgetFormSelect(array('choices' => $this->getNationalityList())),
+        	'cmbReligion' => new sfWidgetFormSelect(array('choices' => $this->getReligionList())),
             'txtOtherID' => new sfWidgetFormInputText(),
             'cmbMarital' => new sfWidgetFormSelect(array('choices' => array('' => "-- " . __('Select') . " --", 'Single' => __('Single'), 'Married' => __('Married'), 'Other' => __('Other')))),
             'chkSmokeFlag' => new sfWidgetFormInputCheckbox(),

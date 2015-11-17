@@ -106,6 +106,10 @@ use_stylesheet(plugin_web_path('orangehrmPimPlugin', 'css/viewPersonalDetailsSuc
                             <label for="personal_cmbNation"><?php echo __("Nationality"); ?></label>
                             <?php echo $form['cmbNation']->render(array("class"=>"editable")); ?>
                         </li>
+                        <li class="new">
+                            <label for="personal_cmbReligion"><?php echo __("Religion"); ?></label>
+                            <?php echo $form['cmbReligion']->render(array("class"=>"editable")); ?>
+                        </li>
                     </ol>
                         
                     <?php if($showDeprecatedFields) : ?>    

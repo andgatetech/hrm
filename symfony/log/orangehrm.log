@@ -1,1 +1,0 @@
-[17-Nov-2015 10:37:32 Europe/Berlin] PHP Fatal error:  Call to undefined method ReligionService::getReligionsById() in D:\xampp\htdocs\orangehrm\symfony\plugins\orangehrmAdminPlugin\modules\admin\actions\getReligionJsonAction.class.php on line 18
