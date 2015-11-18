@@ -463,8 +463,66 @@ Education:
     EmployeeEducation:
       local: id
       foreign: educationId
-      type: many      
-
+      type: many     
+Education:
+  tableName: ohrm_education
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+    name: string(100)
+  relations:
+    EmployeeEducation:
+      local: id
+      foreign: educationId
+      type: many 
+Degree:
+  tableName: ohrm_degree
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    code:
+      type: string(10)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    name:
+      type: string(100)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+Subject:
+  tableName: ohrm_subject
+  columns:
+    id:
+      type: integer(4)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
+    code:
+      type: string(10)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    name:
+      type: string(255)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false       
 Module:
   tableName: ohrm_module
   columns:

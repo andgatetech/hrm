@@ -5,6 +5,7 @@ $imagePath = theme_path("images/login");
     <div>
     <?php include_partial('global/copyright'); ?>
     </div>
+    <!-- 
     <div id="social-icons">
         <a href="http://www.linkedin.com/groups?home=&amp;gid=891077" target="_blank">
             <img src="<?php echo "{$imagePath}/linkedin.png"; ?>" alt="LinkedIn OrangeHRM group"/></a>&nbsp;
@@ -15,4 +16,5 @@ $imagePath = theme_path("images/login");
         <a href="http://www.youtube.com/orangehrm" target="_blank">
             <img src="<?php echo "{$imagePath}/youtube.png"; ?>" alt="OrangeHRM on youtube"/></a>&nbsp;
     </div>
+     -->
 </div>
