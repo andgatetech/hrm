@@ -126,7 +126,7 @@ function getSubjectInfo(url){
         $('#subject_subjectId').val(data.id);
         $('#subject_code').val(data.code);
         $('#subject_name').val(data.name);
-        $('#sujbect').show();
+        $('#subject').show();
         $(".messageBalloon_success").remove();
         $('.top').hide();
     });
