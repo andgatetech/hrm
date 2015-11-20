@@ -20,6 +20,7 @@
  */
 class DivisionForm extends BaseForm {
     private $divisionService;
+    private $countryService;
 
     public function getDivisionService() {
         if (is_null($this->divisionService)) {
@@ -28,21 +29,28 @@ class DivisionForm extends BaseForm {
         }
         return $this->divisionService;
     }
+    public function getCountryService() {
+    	if (is_null($this->countryService)) {
+    		$this->countryService = new CountryService();
+    		$this->countryService->setCountryDao(new CountryDao());
+    	}
+    	return $this->countryService;
+    }
 
     public function configure() {
+    	$countryList = $this->getCountryList();
 
         $this->setWidgets(array(
             'divisionId' => new sfWidgetFormInputHidden(),
             'name' => new sfWidgetFormInputText(),
         	'code' => new sfWidgetFormInputText(),
-        	'countryCode' => new sfWidgetFormInputText()
+        	'country' => new sfWidgetFormSelect(array('choices' => $countryList))
         ));
 
         $this->setValidators(array(
-            'divisionId' => new sfValidatorNumber(array('required' => false)),
-            'name' => new sfValidatorString(array('required' => true, 'max_length' => 100)),
-        	'code' => new sfValidatorString(array('required' => false, 'max_length' => 10)),
-        	'countryCode' => new sfValidatorString(array('required' => false, 'max_length' => 10))
+            'religionId' => new sfValidatorNumber(array('required' => false)),
+            'code' => new sfValidatorString(array('required' => true, 'max_length' => 10)),
+        	'name' => new sfValidatorString(array('required' => true, 'max_length' => 100))
         ));
 
         $this->widgetSchema->setNameFormat('division[%s]');
@@ -52,21 +60,41 @@ class DivisionForm extends BaseForm {
 
         $divisionId = $this->getValue('divisionId');
         if (!empty($divisionId)) {
-            $division = $this->getDivisionService()->getReligionById($religionId);
+            $division = $this->getDivisionService()->getdivisionById($divisionId);
         } else {
-            $religion = new Religion();
+            $division = new Division();
         }
-        $religion->setCode($this->getValue('code'));
-        $religion->setName($this->getValue('name'));
-        $religion->save();
+        $division->setDivisionName($this->getValue('name'));
+        $division->setDivisionCode($this->getValue('code'));
+        $division->setCouCode($this->getValue('countryCode'));
+        $division->save();
+    }
+    
+    /**
+     * Returns Country List
+     * @return array
+     */
+    private function getCountryList() {
+    	$list = array(0 => "-- " . __('Select') . " --");
+    	$countries = $this->getCountryService()->getCountryList();
+    	foreach ($countries as $country) {
+    		$list[$country->cou_code] = $country->cou_name;
+    	}
+    	return $list;
     }
 
-    public function getReligionListAsJson() {
+    public function getDivisionListAsJson() {
 
         $list = array();
-        $religionList = $this->getReligionService()->getReligionList();
-        foreach ($religionList as $religion) {
-            $list[] = array('id' => $religion->getId(), 'code' => $religion->getCode(), 'name' => $religion->getName());
+        $divisionList = $this->getDivisionService()->getDivisionList();
+        foreach ($divisionList as $division) {
+            $list[] = array(
+            		'id' => $division->getId(), 
+            		'name' => $division->getDivisionName(), 
+            		'code' => $division->getDivisionCode(), 
+            		'countryCode' => $division->getCouCode()
+            		
+            );
         }
         return json_encode($list);
     }

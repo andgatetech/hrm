@@ -54,8 +54,13 @@ Division:
       default: BD
       notnull: true
       autoincrement: false
+  relations:
+    country:
+      class: Country
+      local: country_code
+      foreign: cou_code
+      type: one  
 District:
-  connection: doctrine
   tableName: hs_hr_district
   columns:
     district_code:
@@ -84,7 +89,13 @@ District:
       unsigned: false
       primary: false
       notnull: false
-      autoincrement: false	
+      autoincrement: false
+  relations:
+    division:
+      class: Division
+      local: division_code
+      foreign: division_code
+      type: one
 Thana:
   connection: doctrine
   tableName: hs_hr_thana
@@ -108,7 +119,13 @@ Thana:
       unsigned: false
       primary: false
       notnull: false
-      autoincrement: false	  
+      autoincrement: false
+  relations:
+    district:
+      class: District
+      local: district_code
+      foreign: district_code
+      type: one	  
 Degree:
   tableName: ohrm_degree
   columns:
