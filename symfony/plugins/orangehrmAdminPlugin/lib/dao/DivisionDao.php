@@ -31,10 +31,10 @@ class DivisionDao extends BaseDao {
         }
     }
 
-    public function getDivisionById($id) {
+    public function getDivisionByCode($divisionCode) {
 
         try {
-            return Doctrine :: getTable('Division')->find($id);
+            return Doctrine :: getTable('Division')->find($divisionCode);
         } catch (Exception $e) {
             throw new DaoException($e->getMessage());
         }
@@ -44,7 +44,7 @@ class DivisionDao extends BaseDao {
         try {
             $q = Doctrine_Query::create()
                             ->delete('Division')
-                            ->whereIn('id', $divisionList);
+                            ->whereIn('divison_code', $divisionList);
 
             return $q->execute();
         } catch (Exception $e) {

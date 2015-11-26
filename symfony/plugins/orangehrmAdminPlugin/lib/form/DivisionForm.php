@@ -41,14 +41,14 @@ class DivisionForm extends BaseForm {
     	$countryList = $this->getCountryList();
 
         $this->setWidgets(array(
-            'divisionId' => new sfWidgetFormInputHidden(),
+            //'divisionId' => new sfWidgetFormInputHidden(),
             'name' => new sfWidgetFormInputText(),
         	'code' => new sfWidgetFormInputText(),
         	'country' => new sfWidgetFormSelect(array('choices' => $countryList))
         ));
 
         $this->setValidators(array(
-            'religionId' => new sfValidatorNumber(array('required' => false)),
+            //'divisionId' => new sfValidatorNumber(array('required' => false)),
             'code' => new sfValidatorString(array('required' => true, 'max_length' => 10)),
         	'name' => new sfValidatorString(array('required' => true, 'max_length' => 100))
         ));
@@ -58,15 +58,15 @@ class DivisionForm extends BaseForm {
 
     public function save() {
 
-        $divisionId = $this->getValue('divisionId');
-        if (!empty($divisionId)) {
-            $division = $this->getDivisionService()->getdivisionById($divisionId);
+        $divisionCode = $this->getValue('divisionCode');
+        if (!empty($divisionCode)) {
+            $division = $this->getDivisionService()->getdivisionByCode($divisionCode);
         } else {
             $division = new Division();
         }
         $division->setDivisionName($this->getValue('name'));
         $division->setDivisionCode($this->getValue('code'));
-        $division->setCouCode($this->getValue('countryCode'));
+        $division->setCouCode($this->getValue('country'));
         $division->save();
     }
     
@@ -88,12 +88,10 @@ class DivisionForm extends BaseForm {
         $list = array();
         $divisionList = $this->getDivisionService()->getDivisionList();
         foreach ($divisionList as $division) {
-            $list[] = array(
-            		'id' => $division->getId(), 
+            $list[] = array(		
             		'name' => $division->getDivisionName(), 
             		'code' => $division->getDivisionCode(), 
-            		'countryCode' => $division->getCouCode()
-            		
+            		'country' => $division->getCouCode()
             );
         }
         return json_encode($list);

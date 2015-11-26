@@ -10,13 +10,16 @@ Doctrine_Manager::getInstance()->bindComponent('Thana', 'doctrine');
  * @property string $thana_code
  * @property string $thana_name
  * @property string $district_code
+ * @property District $district
  * 
- * @method string getThanaCode()     Returns the current record's "thana_code" value
- * @method string getThanaName()     Returns the current record's "thana_name" value
- * @method string getDistrictCode()  Returns the current record's "district_code" value
- * @method Thana  setThanaCode()     Sets the current record's "thana_code" value
- * @method Thana  setThanaName()     Sets the current record's "thana_name" value
- * @method Thana  setDistrictCode()  Sets the current record's "district_code" value
+ * @method string   getThanaCode()     Returns the current record's "thana_code" value
+ * @method string   getThanaName()     Returns the current record's "thana_name" value
+ * @method string   getDistrictCode()  Returns the current record's "district_code" value
+ * @method District getDistrict()      Returns the current record's "district" value
+ * @method Thana    setThanaCode()     Sets the current record's "thana_code" value
+ * @method Thana    setThanaName()     Sets the current record's "thana_name" value
+ * @method Thana    setDistrictCode()  Sets the current record's "district_code" value
+ * @method Thana    setDistrict()      Sets the current record's "district" value
  * 
  * @package    orangehrm
  * @subpackage model\admin\base
@@ -59,6 +62,8 @@ abstract class BaseThana extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasOne('District as district', array(
+             'local' => 'district_code',
+             'foreign' => 'district_code'));
     }
 }

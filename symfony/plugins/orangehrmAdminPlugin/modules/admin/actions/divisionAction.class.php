@@ -50,8 +50,10 @@ class divisionAction extends sfAction {
         $this->parmetersForListCompoment = $params;
 
         if ($request->isMethod('post')) {
+        	
             $this->form->bind($request->getParameter($this->form->getName()));
             if ($this->form->isValid()) {
+            	//$this->getUser()->setFlash('success', "Form Valid");
                 $this->form->save();
                 $this->getUser()->setFlash('success', __(TopLevelMessages::SAVE_SUCCESS));
                 $this->redirect('admin/division');

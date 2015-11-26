@@ -37,8 +37,8 @@ class DivisionService extends BaseService{
         return $this->divisionDao->getDivisionList();
     }
 
-    public function getDivisionById($id) {
-        return $this->divisionDao->getDivisionById($id);
+    public function getDivisionByCode($divisionCode) {
+        return $this->divisionDao->getDivisionByCode($divisionCode);
     }
 
     public function deleteDivisions($divisionList) {

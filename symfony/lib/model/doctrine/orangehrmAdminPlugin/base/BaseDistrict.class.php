@@ -1,6 +1,4 @@
 <?php
-// Connection Component Binding
-Doctrine_Manager::getInstance()->bindComponent('District', 'doctrine');
 
 /**
  * BaseDistrict
@@ -11,15 +9,21 @@ Doctrine_Manager::getInstance()->bindComponent('District', 'doctrine');
  * @property string $district_name
  * @property string $division_code
  * @property string $province_code
+ * @property Division $division
+ * @property Doctrine_Collection $Thana
  * 
- * @method string   getDistrictCode()  Returns the current record's "district_code" value
- * @method string   getDistrictName()  Returns the current record's "district_name" value
- * @method string   getDivisionCode()  Returns the current record's "division_code" value
- * @method string   getProvinceCode()  Returns the current record's "province_code" value
- * @method District setDistrictCode()  Sets the current record's "district_code" value
- * @method District setDistrictName()  Sets the current record's "district_name" value
- * @method District setDivisionCode()  Sets the current record's "division_code" value
- * @method District setProvinceCode()  Sets the current record's "province_code" value
+ * @method string              getDistrictCode()  Returns the current record's "district_code" value
+ * @method string              getDistrictName()  Returns the current record's "district_name" value
+ * @method string              getDivisionCode()  Returns the current record's "division_code" value
+ * @method string              getProvinceCode()  Returns the current record's "province_code" value
+ * @method Division            getDivision()      Returns the current record's "division" value
+ * @method Doctrine_Collection getThana()         Returns the current record's "Thana" collection
+ * @method District            setDistrictCode()  Sets the current record's "district_code" value
+ * @method District            setDistrictName()  Sets the current record's "district_name" value
+ * @method District            setDivisionCode()  Sets the current record's "division_code" value
+ * @method District            setProvinceCode()  Sets the current record's "province_code" value
+ * @method District            setDivision()      Sets the current record's "division" value
+ * @method District            setThana()         Sets the current record's "Thana" collection
  * 
  * @package    orangehrm
  * @subpackage model\admin\base
@@ -71,6 +75,12 @@ abstract class BaseDistrict extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasOne('Division as division', array(
+             'local' => 'division_code',
+             'foreign' => 'division_code'));
+
+        $this->hasMany('Thana', array(
+             'local' => 'district_code',
+             'foreign' => 'district_code'));
     }
 }

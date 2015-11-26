@@ -550,7 +550,7 @@ Division:
   pluginName: orangehrmAdminPlugin
   hasSelectableRows: true
   unselectableRowIds: []
-  idValueGetter: getId
+  idValueGetter: getDivisionCode
   title: "<?php echo __("Divisions");?>"
   tableWidth: 100%
   hasSummary: false
