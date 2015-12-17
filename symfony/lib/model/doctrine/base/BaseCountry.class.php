@@ -12,7 +12,7 @@
  * @property integer $numcode
  * @property Doctrine_Collection $Location
  * @property OperationalCountry $OperationalCountry
- * @property Doctrine_Collection $Division
+ * @property Division $Division
  * 
  * @method string              getCouCode()            Returns the current record's "cou_code" value
  * @method string              getName()               Returns the current record's "name" value
@@ -21,7 +21,7 @@
  * @method integer             getNumcode()            Returns the current record's "numcode" value
  * @method Doctrine_Collection getLocation()           Returns the current record's "Location" collection
  * @method OperationalCountry  getOperationalCountry() Returns the current record's "OperationalCountry" value
- * @method Doctrine_Collection getDivision()           Returns the current record's "Division" collection
+ * @method Division            getDivision()           Returns the current record's "Division" value
  * @method Country             setCouCode()            Sets the current record's "cou_code" value
  * @method Country             setName()               Sets the current record's "name" value
  * @method Country             setCouName()            Sets the current record's "cou_name" value
@@ -29,7 +29,7 @@
  * @method Country             setNumcode()            Sets the current record's "numcode" value
  * @method Country             setLocation()           Sets the current record's "Location" collection
  * @method Country             setOperationalCountry() Sets the current record's "OperationalCountry" value
- * @method Country             setDivision()           Sets the current record's "Division" collection
+ * @method Country             setDivision()           Sets the current record's "Division" value
  * 
  * @package    orangehrm
  * @subpackage model\base
@@ -81,7 +81,7 @@ abstract class BaseCountry extends sfDoctrineRecord
              'local' => 'cou_code',
              'foreign' => 'country_code'));
 
-        $this->hasMany('Division', array(
+        $this->hasOne('Division', array(
              'local' => 'cou_code',
              'foreign' => 'country_code'));
     }

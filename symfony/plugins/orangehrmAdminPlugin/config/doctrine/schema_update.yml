@@ -24,6 +24,12 @@ Religion:
 Division:
   tableName: hs_hr_division
   columns:
+    id:
+      type: integer(11)
+      fixed: false
+      unsigned: false
+      primary: true
+      autoincrement: true
     division_name:
       type: string(40)
       fixed: false
@@ -51,7 +57,7 @@ Division:
       class: Country
       local: country_code
       foreign: cou_code
-      type: one  
+      type: many  
 District:
   tableName: hs_hr_district
   columns:

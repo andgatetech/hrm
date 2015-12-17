@@ -41,31 +41,31 @@ class DivisionForm extends BaseForm {
     	$countryList = $this->getCountryList();
 
         $this->setWidgets(array(
-            //'divisionId' => new sfWidgetFormInputHidden(),
-            'name' => new sfWidgetFormInputText(),
-        	'code' => new sfWidgetFormInputText(),
+            'divisionId' => new sfWidgetFormInputHidden(),
+            'division_name' => new sfWidgetFormInputText(),
+        	'division_code' => new sfWidgetFormInputText(),
         	'country' => new sfWidgetFormSelect(array('choices' => $countryList))
         ));
 
         $this->setValidators(array(
-            //'divisionId' => new sfValidatorNumber(array('required' => false)),
-            'code' => new sfValidatorString(array('required' => true, 'max_length' => 10)),
-        	'name' => new sfValidatorString(array('required' => true, 'max_length' => 100))
+            'divisionId' => new sfValidatorNumber(array('required' => false)),
+            'division_code' => new sfValidatorString(array('required' => true, 'max_length' => 3)),
+        	'division_name' => new sfValidatorString(array('required' => true, 'max_length' => 100)),
+        	'country' => new sfValidatorString(array('required' => true, 'max_length' => 2))
         ));
 
         $this->widgetSchema->setNameFormat('division[%s]');
     }
 
     public function save() {
-
-        $divisionCode = $this->getValue('divisionCode');
-        if (!empty($divisionCode)) {
-            $division = $this->getDivisionService()->getdivisionByCode($divisionCode);
+        $divisionId= $this->getValue('divisionId');
+        if (!empty($divisionId)) {
+            $division = $this->getDivisionService()->getDivisionById($divisionId);
         } else {
             $division = new Division();
         }
-        $division->setDivisionName($this->getValue('name'));
-        $division->setDivisionCode($this->getValue('code'));
+        $division->setDivisionName($this->getValue('division_name'));
+        $division->setDivisionCode($this->getValue('division_code'));
         $division->setCouCode($this->getValue('country'));
         $division->save();
     }
@@ -84,12 +84,12 @@ class DivisionForm extends BaseForm {
     }
 
     public function getDivisionListAsJson() {
-
         $list = array();
         $divisionList = $this->getDivisionService()->getDivisionList();
         foreach ($divisionList as $division) {
             $list[] = array(		
-            		'name' => $division->getDivisionName(), 
+            		'id' => $division->getId(),
+            		'name' => $division->getDivisionName(),
             		'code' => $division->getDivisionCode(), 
             		'country' => $division->getCouCode()
             );

@@ -24,20 +24,28 @@ class DivisionDao extends BaseDao {
         try {
             $q = Doctrine_Query :: create()
                             ->from('Division')
-                            ->orderBy('name ASC');
+                            ->orderBy('division_name ASC');
             return $q->execute();
         } catch (Exception $e) {
             throw new DaoException($e->getMessage());
         }
     }
 
-    public function getDivisionByCode($divisionCode) {
+    public function getDivisionById($divisionId) {
 
         try {
-            return Doctrine :: getTable('Division')->find($divisionCode);
+            return Doctrine :: getTable('Division')->find($divisionId);
         } catch (Exception $e) {
             throw new DaoException($e->getMessage());
         }
+    }
+    public function getDivisionByCode($divisionCode) {
+    
+    	try {
+    		return Doctrine :: getTable('Division')->find($divisionCode);
+    	} catch (Exception $e) {
+    		throw new DaoException($e->getMessage());
+    	}
     }
 
     public function deleteDivisions($divisionList) {

@@ -16,7 +16,7 @@ include_slot('header', get_partial('global/header'));
                 <a href="#" id="welcome" class="panelTrigger"><?php echo __("Welcome %username%", array("%username%" => $sf_user->getAttribute('auth.firstName'))); ?></a>
                 <div id="welcome-menu" class="panelContainer">
                     <ul>
-                        <li><?php include_component('communication', 'beaconAbout'); ?></li>
+                        <!-- <li><?php include_component('communication', 'beaconAbout'); ?></li> -->
                         <li><a href="<?php echo url_for('admin/changeUserPassword'); ?>"><?php echo __('Change Password'); ?></a></li>
                         <li><a href="<?php echo url_for('auth/logout'); ?>"><?php echo __('Logout'); ?></a></li>
                     </ul>

@@ -112,7 +112,7 @@ $(document).ready(function() {
         messages: {
             'division[code]' : {
                 required: lang_NameRequired,
-                maxlength: lang_exceed50Charactors,
+                maxlength: 2,
                 uniqueName: lang_uniqueName
             }
 
@@ -124,8 +124,14 @@ $(document).ready(function() {
 function getDivisionInfo(url){
 
     $.getJSON(url, function(data) {
-        $('#division_divisionId').val(data.id);
-        $('#division_name').val(data.name);
+    	$('#division_divisionId').val(data.divisionId);
+        $('#division_division_name').val(data.division_name);
+        $('#division_division_code').val(data.division_code);
+        $('#division_country option').each(function() {
+            if($(this).val() == data.cou_code) {
+                $(this).prop("selected", true);
+            }
+        });
         $('#division').show();
         $(".messageBalloon_success").remove();
         $('.top').hide();

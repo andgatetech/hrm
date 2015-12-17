@@ -17,12 +17,12 @@ use_javascript(plugin_web_path('orangehrmAdminPlugin', 'js/divisionSuccess'));
             <fieldset>
                 <ol>
                     <li>
-                        <?php echo $form['name']->renderLabel(__('Name'). ' <em>*</em>'); ?>
-                        <?php echo $form['name']->render(array("class" => "formInput", "maxlength" => 10)); ?>
+                        <?php echo $form['division_name']->renderLabel(__('Name'). ' <em>*</em>'); ?>
+                        <?php echo $form['division_name']->render(array("class" => "formInput", "maxlength" => 100)); ?>
                     </li>
                      <li>
-                        <?php echo $form['code']->renderLabel(__('Code'). ' <em>*</em>'); ?>
-                        <?php echo $form['code']->render(array("class" => "formInput", "maxlength" => 100)); ?>
+                        <?php echo $form['division_code']->renderLabel(__('Code'). ' <em>*</em>'); ?>
+                        <?php echo $form['division_code']->render(array("class" => "formInput", "maxlength" => 3)); ?>
                     </li>
                     <li>
                         <?php echo $form['country']->renderLabel(__('Country'). ' <em>*</em>'); ?>

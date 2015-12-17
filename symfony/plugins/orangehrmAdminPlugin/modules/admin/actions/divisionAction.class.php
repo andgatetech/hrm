@@ -50,10 +50,10 @@ class divisionAction extends sfAction {
         $this->parmetersForListCompoment = $params;
 
         if ($request->isMethod('post')) {
-        	
             $this->form->bind($request->getParameter($this->form->getName()));
+            //$this->getUser()->setFlash('success',"DEBUG: BEFORE VALIDATION.");
             if ($this->form->isValid()) {
-            	//$this->getUser()->setFlash('success', "Form Valid");
+            	//$this->getUser()->setFlash('success',"DEBUG: AFTER VALIDATION.");
                 $this->form->save();
                 $this->getUser()->setFlash('success', __(TopLevelMessages::SAVE_SUCCESS));
                 $this->redirect('admin/division');
@@ -62,7 +62,6 @@ class divisionAction extends sfAction {
     }
 
     private function _setListComponent($divisionList) {
-
         $configurationFactory = new DivisionHeaderFactory();
         ohrmListComponent::setConfigurationFactory($configurationFactory);
         ohrmListComponent::setListData($divisionList);
